@@ -1,0 +1,37 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"resolveJsonModule": true,
+		"outDir": "./dist",
+		"noEmitOnError": false,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitAny": false,
+		"strictPropertyInitialization": false,
+		"lib": ["ES2020"],
+		"baseUrl": "./",
+		"skipLibCheck": true,
+		"paths": {
+			"@/*": ["src/*"]
+		},
+		"useUnknownInCatchVariables": false
+	},
+	"exclude": ["node_modules", "**/*.test.ts", "src/controllers", "src/routes"],
+	"ts-node": {
+		"swc": true,
+		"require": ["tsconfig-paths/register", "./config.ts"]
+	},
+	"include": [
+		"src/**/*.ts",
+		"spec/**/*.ts",
+		"config.ts",
+		"scripts",
+		"eslint.config.ts"
+	]
+}
