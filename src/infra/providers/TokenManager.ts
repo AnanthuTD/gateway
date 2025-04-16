@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { verify, decode } from "jsonwebtoken";
-import env from "@/infra/env.js";
+import env from "@/infra/env";
 
 /**
  * Provider for managing and validating authentication tokens.

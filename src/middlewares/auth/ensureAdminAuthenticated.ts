@@ -1,5 +1,5 @@
-import { AuthMessages } from "@/domain/enums/AuthMessages.js";
-import { TokenManagerProvider } from "@/providers/TokenManager.js";
+import { AuthMessages } from "@/domain/enums/AuthMessages";
+import { TokenManagerProvider } from "@/infra/providers/TokenManager";
 
 
 /**

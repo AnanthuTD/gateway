@@ -5,7 +5,6 @@ const env = cleanEnv(process.env, {
 		choices: ["development", "test", "production", "staging"],
 	}),
 	PORT: port(),
-	COLLABORATION_API_URL: url(),
 
 	USER_ACCESS_TOKEN_SECRET: str(),
 	ADMIN_ACCESS_TOKEN_SECRET: str(),

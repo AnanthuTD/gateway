@@ -22,7 +22,7 @@
 		},
 		"useUnknownInCatchVariables": false
 	},
-	"exclude": ["node_modules", "**/*.test.ts", "src/controllers", "src/routes"],
+	"exclude": ["node_modules", "**/*.test.ts", "src/controllers", "src/presentation/routes"],
 	"ts-node": {
 		"swc": true,
 		"require": ["tsconfig-paths/register", "./config.ts"]
