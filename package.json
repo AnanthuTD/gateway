@@ -21,6 +21,7 @@
     "cors": "^2.8.5",
     "dayjs": "^1.11.13",
     "envalid": "^8.0.0",
+    "express": "^5.1.0",
     "express-rate-limit": "^7.5.0",
     "http-proxy-middleware": "^3.0.3",
     "jsonwebtoken": "^9.0.2",
