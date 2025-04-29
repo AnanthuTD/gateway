@@ -8,7 +8,7 @@ export const adminRoutes = (): RouteConfig[] => [
     {
       target: env.USER_SERVICE_API,
       changeOrigin: true,
-      pathRewrite: { "^/": "/api/admin/" },
+      pathRewrite: { "^/": "/api/admin/auth/" },
     },
     { windowMs: 15 * 60 * 1000, max: 20 }
   ),
@@ -18,10 +18,10 @@ export const adminRoutes = (): RouteConfig[] => [
     {
       target: env.USER_SERVICE_API,
       changeOrigin: true,
-      pathRewrite: { "^/": "/api/admin" },
+      pathRewrite: { "^/": "/api/admin/" },
     },
     { windowMs: 15 * 60 * 1000, max: 20 },
     null,
     "admin"
   ),
-];
+]; 
