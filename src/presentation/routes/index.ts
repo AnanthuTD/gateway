@@ -5,7 +5,7 @@ import { videoRoutes } from "./videoRoutes";
 import { emailRoutes } from "./emailRoutes";
 import { adminRoutes } from "./adminRoutes";
 import { subscriptionRoutes } from "./subscriptionRoutes";
-import { Request } from "express";
+import { NextFunction, Request, Response } from "express";
 
 interface ProxyConfig {
 	target: string;
@@ -34,6 +34,13 @@ export interface RouteConfig {
 	rateLimit?: RateLimitConfig;
 	methods?: MethodConfig[];
 	role?: "admin" | "user";
+	handlers?: {
+		[method: string]: (
+			req: Request,
+			res: Response,
+			next: NextFunction
+		) => void | Promise<void>;
+	};
 }
 
 export const createRoute = (
@@ -42,12 +49,20 @@ export const createRoute = (
 	proxy: ProxyConfig,
 	rateLimit: RateLimitConfig | null = null,
 	methods: MethodConfig[] | null = null,
-	role: "admin" | "user" = "user"
+	role: "admin" | "user" = "user",
+	handlers: {
+		[method: string]: (
+			req: Request,
+			res: Response,
+			next: NextFunction
+		) => void | Promise<void>;
+	} | null = null
 ): RouteConfig => ({
 	url,
 	auth,
 	...(rateLimit && { rateLimit }),
 	...(methods && { methods }),
+	...(handlers && { handlers }),
 	proxy,
 	role,
 });
