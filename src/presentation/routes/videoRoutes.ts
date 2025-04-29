@@ -19,7 +19,7 @@ export const videoRoutes = (): RouteConfig[] => [
 		target: env.VIDEO_SERVICE_API,
 		changeOrigin: true,
 		pathRewrite: function (path, req) {
-			return req.originalUrl.replace(/^\/videos/, "");
+			return req.originalUrl.replace(/^\/videos/, "/api");
 		},
 	}),
 	createRoute("/videos/public", false, {
