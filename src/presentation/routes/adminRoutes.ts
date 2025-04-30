@@ -13,6 +13,18 @@ export const adminRoutes = (): RouteConfig[] => [
     { windowMs: 15 * 60 * 1000, max: 20 }
   ),
   createRoute(
+    "/admin/videos",
+    true,
+    {
+      target: env.VIDEO_SERVICE_API,
+      changeOrigin: true,
+      pathRewrite: { "^/": "/api/" },
+    },
+    { windowMs: 15 * 60 * 1000, max: 20 },
+    null,
+    "admin"
+  ),
+  createRoute(
     "/admin",
     true,
     {
