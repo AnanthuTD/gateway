@@ -41,11 +41,11 @@ export const ensureUserAuthenticated = (
 	let token: null | string = null;
 
 	try {
-		if (bearerToken && tokenManager.validateAdminAccessToken(bearerToken)) {
+		if (bearerToken && tokenManager.validateUserAccessToken(bearerToken)) {
 			token = bearerToken;
 		} else if (
 			cookieToken &&
-			tokenManager.validateAdminAccessToken(cookieToken)
+			tokenManager.validateUserAccessToken(cookieToken)
 		) {
 			token = cookieToken;
 		} else {
