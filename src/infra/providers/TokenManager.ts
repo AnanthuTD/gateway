@@ -69,9 +69,14 @@ export class TokenManagerProvider {
 		return decoded.exp;
 	}
 
-	getPayload(token: string): { id: string; [key: string]: string } {
+	getPayload(token: string): {
+		id: string;
+		role: "user" | "admin";
+		[key: string]: string;
+	} {
 		const decoded = decode(token) as {
 			id: string;
+			role: "user" | "admin";
 			[key: string]: string;
 		};
 		return decoded;

@@ -4,6 +4,7 @@ import { Request, Response, NextFunction } from "express";
 
 interface TokenPayload {
 	id: string;
+	role: "user" | "admin";
 }
 
 declare global {
